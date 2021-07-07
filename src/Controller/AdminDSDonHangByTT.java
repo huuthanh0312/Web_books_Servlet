@@ -1,0 +1,61 @@
+package Controller;
+
+import java.io.IOException;
+import java.util.ArrayList;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import Model.BO.AdminBO;
+import Model.BO.KhachHangBO;
+import Model.Bean.HoadonBean;
+import Model.Bean.KhachhangBean;
+
+@WebServlet("/AdminDSDonHangByTT")
+public class AdminDSDonHangByTT extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    public AdminDSDonHangByTT() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		AdminBO ad = new AdminBO();
+		KhachHangBO kh = new KhachHangBO();
+		String duyetstr=request.getParameter("duyet");
+		int duyet= Integer.parseInt(duyetstr);
+		try {
+			if(duyet == 2){	//neu tim theo ma
+				ArrayList<HoadonBean> dsdonhang = ad.DSDonHangTheoDuyet(duyet);
+				request.setAttribute("DSDonHang", dsdonhang);
+				ArrayList<KhachhangBean> dskh = kh.DSKhachHang();
+				request.setAttribute("DSKH", dskh);	
+				RequestDispatcher rd = request.getRequestDispatcher("View/Admin/Donhangdaduyet.jsp");
+				rd.forward(request, response);
+			} 
+			if(duyet == 3){	//neu tim theo ma
+				ArrayList<HoadonBean> dsdonhang = ad.DSDonHangTheoDuyet(duyet);
+				request.setAttribute("DSDonHang", dsdonhang);
+				ArrayList<KhachhangBean> dskh = kh.DSKhachHang();
+				request.setAttribute("DSKH", dskh);	
+				RequestDispatcher rd = request.getRequestDispatcher("View/Admin/Donhangtuchoi.jsp");
+				rd.forward(request, response);
+			}
+			
+			}catch(Exception tt){
+				response.getWriter().println("<html><body>"+
+				tt.getMessage()+"</body></html>");
+			}
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}

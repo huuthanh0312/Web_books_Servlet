@@ -1,0 +1,17 @@
+eclipse.preferences.version=1
+encoding//src/Controller/AdminLoaiSach.java=UTF-8
+encoding//src/Controller/AdminSach.java=UTF-8
+encoding//src/Controller/AdminSuaLoaiSach.java=UTF-8
+encoding//src/Controller/AdminTKSachThemDH.java=UTF-8
+encoding//src/Controller/AdminThemSach.java=UTF-8
+encoding//src/Controller/AdminXuLyChiTietDonHang.java=UTF-8
+encoding//src/Controller/DangNhapController.java=UTF-8
+encoding//src/Controller/GiohangController.java=UTF-8
+encoding//src/Controller/LichsudonhangController.java=UTF-8
+encoding//src/Controller/RegisterController.java=UTF-8
+encoding//src/Controller/SachController.java=UTF-8
+encoding//src/Controller/TheloaiController.java=UTF-8
+encoding//src/Controller/TimkiemController.java=UTF-8
+encoding//src/Model/DAO/AdminDAO.java=UTF-8
+encoding//src/Model/DAO/KhachHangDAO.java=UTF-8
+encoding//src/Model/DAO/SachDAO.java=UTF-8
